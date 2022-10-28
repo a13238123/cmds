@@ -26,11 +26,13 @@ Commands.Name = "Commands"
 Commands.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 Commands.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-Frame.Parent = Commands
+Frame.Parent = game.CoreGui
 Frame.BackgroundColor3 = Color3.fromRGB(74, 161, 255)
 Frame.BorderColor3 = Color3.fromRGB(74, 161, 255)
 Frame.Position = UDim2.new(0.525304317, 0, 0.122352935, 0)
 Frame.Size = UDim2.new(0, 290, 0, 25)
+Frame.Draggable = true
+Frame.Active = true
 
 TextButton.Parent = Frame
 TextButton.BackgroundColor3 = Color3.fromRGB(74, 161, 255)
@@ -41,6 +43,9 @@ TextButton.Font = Enum.Font.Cartoon
 TextButton.Text = "_"
 TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.TextSize = 14.000
+TextButton.MouseButton1Down:Connect(function()
+   game.CoreGui.Frame:Destroy()
+end)
 
 Frame_2.Parent = Frame
 Frame_2.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
